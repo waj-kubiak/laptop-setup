@@ -1,0 +1,171 @@
+/**
+Kubiak's theme for rofi (manjaro colours)
+User: wkubiak
+**/
+
+configuration {
+    show-icons: true;
+}
+
+*{
+  // Red
+  red:      #ab4642;
+  lightred: #ab4642;
+  // Green
+  green:      #8d8f8d;
+  lightgreen: #7e807e;
+  // Yellow
+  yellow:      #f7ca88;
+  lightyellow: #f7ca88;
+  // Blue
+  blue:      #7cafc2;
+  lightblue: #7cafc2;
+  // Magenta
+  magenta:  #ba8baf;
+  lightmagenta:  #ba8baf;
+  // Cyan
+  cyan: #1abb9b;
+  tcyan: #1abb9bcc;
+  lightcyan: #1abb9b;
+  // White
+  white: #d8d8d8;
+  twhite: #d8d8d8cc;
+  // Black
+  black: #222d31;
+  tblack: #222d31cc;
+
+  foreground: @white;
+  backlight: @twhite;
+  background-color: transparent;
+
+  transparent: rgba(0,0,0,0);
+}
+
+#window {
+  location: center;
+  anchor: center;
+  transparency: "real";
+  padding: 5px;
+  border: 0px;
+  border-radius: 5px;
+  color: @white;
+  background-color: @transparent;
+  spacing: 0;
+  children: [ vertb, mainbox];
+  orientation: horizontal;
+}
+
+#mainbox {
+  spacing: 0;
+  children: [ inputbar, message, listview ];
+}
+
+#message {
+  padding: 5;
+  background-color: @twhite;
+}
+
+#inputbar {
+  color: @black;
+  padding: 5px;
+  background-color: @tcyan;
+  border: 2px 2px 0px 2px;
+  border-color: @white;
+  children: [ entry, case-indicator ];
+  //children: [ prompt, textbox-prompt-colon, entry, case-indicator ];
+}
+
+#entry,prompt,case-indicator {
+  text-color: inherit;
+}
+
+#textbox-prompt-colon {
+  text-color: inherit;
+  expand: false;
+  str: ":";
+}
+
+#listview {
+  padding: 15px;
+  border-color: @white;
+  border: 2px 2px 2px 2px;
+  background-color: @tblack;
+  dynamic: false;
+}
+
+#element {
+  padding: 5px;
+  vertical-align: 0.5;
+  background-color: transparent;
+  color: @white;
+  border-color: @white;
+}
+
+#element alternate active {
+  background-color: @green;
+  border: 1px 1px 1px 1px;
+  color: @black;
+}  
+#element normal active {
+  background-color: @green;
+  border: 1px 1px 1px 1px;
+  color: @black;
+}
+#element selected active {
+  background-color: @lightgreen;
+  color: @black;
+}
+
+#element alternate normal {
+  border: 1px 1px 1px 1px;
+}
+#element normal normal {
+  border: 1px 1px 1px 1px;
+}
+#element selected normal {
+  background-color: @tcyan;
+  color: @black;
+}
+
+#element alternate urgent {
+  background-color: @lightred;
+  border: 1px 1px 1px 1px;
+  color: @black;
+}
+#element normal urgent {
+  background-color: @lightred;
+  border: 1px 1px 1px 1px;
+  color: @black;
+}
+#element selected urgent {
+  background-color: @red;
+  color: @black;
+}
+
+#vertb {
+  expand: false;
+  children: [ dummy0, dummy1 ];
+}
+
+#dummy0, dummy1 {
+  expand: true;
+}
+
+//#sidebar {
+//  expand: false;
+//  orientation: vertical;
+//  spacing: 10px;
+//  border: 10px 10px 10px 10px;
+//}
+
+#button {
+  padding: 10px;
+  border: 10px 0px 12px 14px;
+  border-radius: 8px 0px 0px 8px;
+  border-color: @white;
+}
+#button selected normal {
+  border: 10px 0px 12px 14px;
+  background-color: @twhite;
+  border-color: @white;
+}
