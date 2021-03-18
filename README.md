@@ -6,3 +6,7 @@
 3. replace dmenu with rofi
 4. i3 - Add two workspaces, 9 and (1)0 and keybindings for them
     - don't start conky
+
+This may help with crappy wifi speed:
+
+```sudo lsmod | grep -o -e ^iwlmvm -e ^iwldvm -e ^iwlwifi | xargs sudo rmmod && sleep 3 && sudo modprobe iwlwifi swcrypto=1 11n_disable=1```
